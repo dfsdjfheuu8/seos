@@ -1,4 +1,4 @@
-function fetch() {
+window.fetch = function () {
     var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     var xhr = new XMLHttpRequest();
@@ -29,15 +29,15 @@ function fetch() {
     xhr.open(method, url, true);
     xhr.send();
   };
-  fetch.prototype.then = function(fufillmentFunction) {
+  window.fetch.prototype.then = function(fufillmentFunction) {
         this.onFufillment.push(fufillmentFunction);
         return this;
   };
-  fetch.prototype.catch = function(errorFunction) {
+  window.fetch.prototype.catch = function(errorFunction) {
         this.onError.push(errorFunction);
         return this;
   };
-  fetch.prototype.finally = function(completionFunction) {
+  window.fetch.prototype.finally = function(completionFunction) {
         this.onCompletion.push(completionFunction);
         return this;
   };
