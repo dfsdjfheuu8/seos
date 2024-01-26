@@ -1,4 +1,4 @@
-function Fetch() {
+function fetch() {
     var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     var xhr = new XMLHttpRequest();
@@ -29,15 +29,15 @@ function Fetch() {
     xhr.open(method, url, true);
     xhr.send();
   };
-  Fetch.prototype.then = function(fufillmentFunction) {
+  fetch.prototype.then = function(fufillmentFunction) {
         this.onFufillment.push(fufillmentFunction);
         return this;
   };
-  Fetch.prototype.catch = function(errorFunction) {
+  fetch.prototype.catch = function(errorFunction) {
         this.onError.push(errorFunction);
         return this;
   };
-  Fetch.prototype.finally = function(completionFunction) {
+  fetch.prototype.finally = function(completionFunction) {
         this.onCompletion.push(completionFunction);
         return this;
   };
